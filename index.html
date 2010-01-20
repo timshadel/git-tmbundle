@@ -1,80 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>hyde</title>
+    <style type="text/css" media="screen">
+      body{margin:40px 0;font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;font-weight:300;font-size:14px;}
+      #container{margin:0 auto;width:500px;}
+      h1,h2,h3{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;font-weight:300;color:#000;text-align:center;}
+      h1{font-size:48px;}
+      h2{font-size:24px;}
+      h3{font-size:18px;}
+      p{color:#333;text-align:justify;}
+      p.signature{color:#000;font-weight:bold;}
+      p.signature a{color:#999;font-weight:normal;}
+      a{color:#0080FF;text-decoration:none;}
+      a:hover{color:#000;text-decoration:underline;}
+      a:active{color:#FF0080;}
+      ul li{color:#666;}
+      ul li span.name{color:#000;}
+    </style>
+  </head>
+  <body id="hyde">
+    <div id="container">
+      <h1>
+        Get your Git on!
+      </h1>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <h2>
+        Interact with your <a href="http://git-scm.org">git</a> repo
+        from within <a href="http://macromates.com">TextMate</a>
+      </h2>
 
-	<title>jcf/git-tmbundle @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #fff;
-		  font-family: "Helvetica,Arial,FreeSans"; 
-  		color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #000000; }
-    h3 { text-align: center; color: #000000; }
-    a { color: #000000; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
-</head>
+      <h3>
+        Authors &amp; Contributors
+      </h3>
 
-<body>
-  <a href="http://github.com/jcf/git-tmbundle"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-  
-  <div id="container">
+      <ul>
+        <li>
+          <span class="name">Allan Odgaard</span> Started the bundle, got it rolling. Many patches. Oh, and TextMate.
+        </li>
+        <li>
+          <span class="name">Sam Granieri</span> GitK, Many of the git-svn commands, Git initialize repository command, menu layouting, create-tag.
+        </li>
+        <li>
+          <span class="name">Johan Sørensen</span> Contributing the CSS styling.
+        </li>
+      </ul>
 
-    <div class="download">
-      <a href="http://github.com/jcf/git-tmbundle/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/jcf/git-tmbundle/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+      <h3>Patches</h3>
+
+      <ul>
+        <li>
+          <span class="name">Tommi Asiala</span> README file submission
+        </li>
+        <li>
+          <span class="name">Lawrence Pit</span> Performance Enhancements
+        </li>
+        <li>
+          <span class="name">Jay Soffian</span> Bug report with patch (missing environment variables)
+        </li>
+        <li>
+          <span class="name">Humberto Diógenes</span> Git-svn fetch command
+        </li>
+        <li>
+          <span class="name">Lee Marlow</span>
+        </li>
+        <li>
+          <span class="name">Geoff Cheshire</span> Textile’d the README to make it look good on GitHub.
+        </li>
+        <li>
+          <span class="name">Martin Kühl</span> Patch to allow committing into a git repository that’s not the project root.
+        </li>
+        <li>
+          <span class="name">Diego Barros</span> new config options, usability improvements
+        </li>
+        <li>
+          <span class="name">Thomas Aylott</span> Git commit language folding
+        </li>
+        <li>
+          <span class="name">Michael Sheets</span> Usability improvements
+        </li>
+        <li>
+          <span class="name">Henrik Nyh</span> Spelling
+        </li>
+      </ul>
+      <p>
+        Clone the source from
+        <a href="git://github.com/jcf/git-tmbundle.git">
+          git://github.com/jcf/git-tmbundle.git
+        </a>
+        or browse the source at
+        <a href="http://github.com/jcf/git-tmbundle">
+          http://github.com/jcf/git-tmbundle
+        </a>
+      </p>
+
+
     </div>
-      
-    <h1><a href="http://github.com/jcf/git-tmbundle">git-tmbundle</a> 
-      <span class="small">by <a href="http://github.com/jcf">jcf</a></span></h1>
-
-    <div class="description">
-      The Git TextMate Bundle
-    </div>
-
-    <h2>Authors</h2>
-<p>W. Andrew Loe III (andrew@andrewloe.com)<br/>Diego Barros (diego@heyboyo.com)<br/>Geoff Cheshire (gcheshire@gmail.com)<br/>Allan Odgaard (git@abetarda.com)<br/>Michael Sheets (git@whitefalls.org)<br/>Henrik N (henrik@nyh.se)<br/>James Conroy-Finn (james@logi.cl)<br/>Joe Tanner (joe.tanner@leadmediapartners.com)<br/>Lawrence Pit (lawrence.pit@gmail.com)<br/>Loren Segal (lsegal@soen.ca)<br/>Matthias Granberry (matthias.granberry@gmail.com)<br/>Pedro Melo (melo@simplicidade.org)<br/>Thomas Aylott (oblivious+git@subtlegradient.com)<br/>Pieter de Bie (pdebie@ai.rug.nl)<br/>Sam Granieri (sam@samgranieri.com)<br/>Tim Harper (timcharper@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>James Conroy-Finn (james@logi.cl)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/jcf/git-tmbundle/zipball/master">zip</a> or
-      <a href="http://github.com/jcf/git-tmbundle/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/jcf/git-tmbundle</pre>
-    </p>
-      
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/jcf/git-tmbundle">jcf/git-tmbundle</a>
-    </div>
-    
-  </div>
-
-  
-</body>
+  </body>
 </html>
