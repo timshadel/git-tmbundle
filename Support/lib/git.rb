@@ -102,9 +102,9 @@ module SCM
     end
     
     def make_local_path(fullpath)
-      fullpath = fullpath.gsub(/#{path}\/{0,1}/, "")
-      fullpath = "." if fullpath == ""
-      fullpath
+      escaped_dirname = Regexp.escape(path)
+      fullpath = fullpath.gsub(/#{escaped_dirname}\/{0,1}/, "")
+      fullpath.empty? ? '.' : full_path
     end
     
     def paths(options = { :unique => true, :fallback => :project })

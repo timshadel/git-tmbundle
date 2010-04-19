@@ -16,6 +16,7 @@ class SCM::Git::Branch < SCM::Git::CommandProxyBase
   end
   
   def create_and_switch(name)
+    name = name.strip.gsub(/\s/, '_') if name.include?(' ')
     base.command("checkout", "-b", name)
   end
   
