@@ -32,13 +32,18 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^((.{1,65}\s*)|(.+\s*))$</string>
+			<string>^((.{1,50}\s*)|(.{51,65}\s*)|(.+\s*))$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.deprecated.line-too-long</string>
+					<string>invalid.warning.line-too-long</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.error.line-too-long</string>
 				</dict>
 			</dict>
 			<key>comment</key>
