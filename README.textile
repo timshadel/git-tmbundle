@@ -30,6 +30,15 @@ h2. Support
 
 The "Mailing list":http://groups.google.com/group/git-tmbundle has now been closed. Please feel free to report issues using the "Issue tracker":http://github.com/jcf/git-tmbundle/issues.
 
+h2. Theme notes:
+
+The "Git Commit Message" Language defines two scopes that can be used by a theme to generate "line too long" warnings for the first line of the commit:
+
+* invalid.warning.line-too-long.git-commit
+* invalid.error.line-too-long.git-commit
+
+The warning scope triggers when the first line exceeds 50 characters; the error scope over 65 characters. These aren't generally-used TextMate scopes, so you can add new rules to your preferred themes, such as orange background/red background. You can also edit the regex to change the preferred character counts.
+
 h2. Who:
 
 h3. Maintainer, Lead Developer:
@@ -64,5 +73,6 @@ h3. Patches, etc
 * <b>Michael Sheets</b> - Usability improvements
 * <b>Henrik Nyh</b> - Git 1.6 commit message compatibility and spelling corrections
 * <b>Slava Kravchenko</b> - Ruby 1.9 compatibility
+* <b>Adam Vandenberg</b> - First-line-too-long support
 
 Please feel free to send a pull request if you've added any functionality to this bundle that you think the rest of the git-loving, TextMate-using world would appreciate!

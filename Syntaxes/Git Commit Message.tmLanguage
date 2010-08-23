@@ -38,12 +38,12 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.warning.line-too-long</string>
+					<string>invalid.warning.line-too-long.git-commit</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.error.line-too-long</string>
+					<string>invalid.error.line-too-long.git-commit</string>
 				</dict>
 			</dict>
 			<key>comment</key>
