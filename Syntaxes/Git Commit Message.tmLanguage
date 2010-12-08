@@ -32,15 +32,20 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^((.{1,50}\s*)|(.{51,65}\s*)|(.+\s*))$</string>
+			<string>^((.{1,50})((.{1,15})(.+\s*))?)$</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>3</key>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.git-commit.subject</string>
+				</dict>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.warning.line-too-long.git-commit</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.error.line-too-long.git-commit</string>
@@ -53,90 +58,140 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.git-commit</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.git-commit.modified</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(^#\s*)(modified:.*)$</string>
-					<key>name</key>
-					<string>comment.line.number-sign.git-commit</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.git-commit</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.git-commit.new</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(^#\s*)(new file:.*)$</string>
-					<key>name</key>
-					<string>comment.line.number-sign.git-commit</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.git-commit</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.git-commit.deleted</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(^#\s*)(deleted:.*)$</string>
-					<key>name</key>
-					<string>comment.line.number-sign.git-commit</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.git-commit</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>^\s*(#).*$\n?</string>
-					<key>name</key>
-					<string>comment.line.number-sign.git-commit</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>diff\ \-\-git</string>
+					<string>^(.+)?$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.warning.line-should-be-blank.git-commit</string>
+						</dict>
+					</dict>
 					<key>comment</key>
-					<string>diff presented at the end of the commit message when using commit -v. NB the end pattern is just something to be never matched so that the meta continues until the end of the file.</string>
+					<string>Capture the rest of the commit message to test for a blank second line. NB the end pattern is just something to be never matched so the capture continues until the end of the file.</string>
 					<key>end</key>
 					<string>(?=xxxxxx)123457</string>
-					<key>name</key>
-					<string>meta.diff.git-commit</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
-							<string>source.diff</string>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.git-commit</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>meta.git-commit.modified</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(^#\s*)(modified:.*)$</string>
+							<key>name</key>
+							<string>comment.line.number-sign.git-commit</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.git-commit</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>meta.git-commit.new</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(^#\s*)(new file:.*)$</string>
+							<key>name</key>
+							<string>comment.line.number-sign.git-commit</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.git-commit</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>meta.git-commit.deleted</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(^#\s*)(deleted:.*)$</string>
+							<key>name</key>
+							<string>comment.line.number-sign.git-commit</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.git-commit</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>^\s*(#).*$\n?</string>
+							<key>name</key>
+							<string>comment.line.number-sign.git-commit</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>diff\ \-\-git</string>
+							<key>comment</key>
+							<string>diff presented at the end of the commit message when using commit -v. NB the end pattern is just something to be never matched so that the meta continues until the end of the file.</string>
+							<key>end</key>
+							<string>(?=xxxxxx)123457</string>
+							<key>name</key>
+							<string>meta.diff.git-commit</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>source.diff</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.language.git-commit.signature</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>constant.language.git-commit.signature</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Signature line added by git when using the  -s (--signoff) option.</string>
+							<key>match</key>
+							<string>^(Signed-off-by:)(.*)</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>invalid.git-commit.message.expected-end-of-line</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>^.{,72}(.*)</string>
 						</dict>
 					</array>
 				</dict>
