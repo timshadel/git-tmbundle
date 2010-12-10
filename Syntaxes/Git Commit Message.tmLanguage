@@ -32,7 +32,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^((.{1,50})((.{1,15})(.+\s*))?)$</string>
+			<string>^((.{1,50}\s*)|(.{1,50}(.{1,15})\s*)|(.{1,50}(.{1,15})(.+)\s*))$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -40,12 +40,27 @@
 					<key>name</key>
 					<string>meta.git-commit.subject</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>meta.git-commit.subject.warning</string>
+				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.warning.line-too-long.git-commit</string>
 				</dict>
 				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>meta.git-commit.subject.error</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.warning.line-too-long.git-commit</string>
+				</dict>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.error.line-too-long.git-commit</string>
