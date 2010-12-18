@@ -42,7 +42,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>meta.git-commit.subject</string>
+					<string>keyword.language.git-commit.subject</string>
 				</dict>
 				<key>3</key>
 				<dict>
